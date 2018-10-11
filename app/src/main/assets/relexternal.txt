@@ -1,0 +1,13 @@
+<li><a href="new/error.html"  rel="external">Next</a></li> 
+
+fixed header and footer ... 
+categorize all the faculties into the semesters and 
+add fixed header and footer with subject code in header.
+
+put the back button for the ios // 
+
+
+
+
+
+

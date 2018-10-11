@@ -1,0 +1,43 @@
+package np.mks.ioesyllabus;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+
+public class Main2Activity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            // TODO Auto-generated method stub
+            super.onCreate(savedInstanceState);
+
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+            setContentView(R.layout.activity_main2);
+
+            Thread timerThread = new Thread() {
+                public void run() {
+                    try {
+                        sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } finally {
+                        Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                }
+            };
+            timerThread.start();
+        }
+
+        @Override
+        protected void onPause() {
+            // TODO Auto-generated method stub
+            super.onPause();
+            finish();
+        }
+    }
